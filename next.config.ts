@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
   experimental: {
     // Cloudflare quick tunnels ("Share Kept.bat") put the app behind *.trycloudflare.com
     serverActions: { bodySizeLimit: '2mb', allowedOrigins: ['*.trycloudflare.com'] },
+    turbopack: false, // Disable Turbopack to use standard SWC compiler
   },
   async headers() {
     return [{ source: '/:path*', headers: securityHeaders }];
